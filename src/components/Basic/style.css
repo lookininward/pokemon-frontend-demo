@@ -1,0 +1,146 @@
+/* Keep styles basic while showing off some advanced knowledge of css. */
+/* todo: css variables */
+/* todo: flex, and grid */
+/* todo: image container */
+/* todo: positioning */
+/* todo: css box model */
+/* todo: sizing units em */
+/* todo: single media query for mobile and desktop, responsive */
+/* todo: BEM */
+
+/* Create color variables for warning, default */
+:root {
+    --color-warning: crimson;
+    --color-default: black;
+    --viewport-desktop: 768px;
+}
+
+/* Demonstrate targeting by semantic name - general selector */
+h1 {
+    color: var(--color-default);
+    font-size: 1.5em;
+}
+
+a {
+    color: var(--color-default);
+    text-decoration: none;
+}
+
+/* Route */
+.pokemon-search-page {
+    /* Demonstrate layout with flex */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2em;
+}
+
+/* Container */
+.pokemon-search-container {
+    /* Demonstrate layout with grid */
+    display: grid;
+    place-items: center;
+    grid-auto-rows: auto;
+    align-content: start;
+    padding: 1em;
+    width: 100%;
+    height: 100%;
+}
+
+/* Search Form */
+.form {
+    width: 100%;
+    max-width: 450px;
+    padding: 1em;
+    margin-bottom: 1.5em;
+}
+
+/* Demonstrate BEM */
+.form__actions {
+    display: flex;
+    justify-content: center;
+}
+
+.form__btn {
+    margin-top: 1em;
+    width: 100%;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+/* todo: Demonstrate use of advanced node selectors */
+.form__btn:nth-of-type(2) {
+    margin-left: 0.5em;
+}
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__field-label {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--color-default);
+}
+
+.form__field-error {
+    margin-top: 0.5rem;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-warning);
+}
+
+/* Data */
+.pokemon {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-default);
+    padding: 2.5em;
+    text-align: center;
+}
+
+.pokemon__label {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--color-default);
+}
+
+.pokemon__moves {
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemon__moves-list {
+    /* Demonstrate overflowing content and scroll */
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: scroll;
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+.pokemon__move {
+    margin-bottom: 0.5em;
+    text-transform: capitalize;
+    padding: 0.5em 1em;
+    border: 1px solid var(--color-default);
+    color: var(--color-default);
+}
+
+/* Demonstrate responsive, mobile-first design with media queres */
+/* add a mdeia query that starts at desktop */
+@media (min-width: 768px) {
+    .pokemon {
+        text-align: left;
+    }
+}

@@ -1,0 +1,137 @@
+/* Keep styles basic while showing off some advanced knowledge of css. */
+/* todo: flex, and grid */
+/* todo: image container */
+/* todo: positioning */
+/* todo: css box model */
+
+/* Demonstrate use of native css variables */
+/* https://roadmap.sh/videos/how-to-use-css-variables */
+:root {
+    --color-warning: crimson;
+    --color-default: black;
+}
+
+/* Demonstrate targeting DOM element with semantic selectors */
+h1 {
+    color: var(--color-default);
+    /* Demonstrate use of relative sizing units */
+    font-size: 1.5em; 
+}
+
+/* Route */
+/* Demonstrate targeting DOM element why classnames */
+.pokemon-search-page {
+    padding: 3em;
+}
+
+/* Container */
+.pokemon-search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%;
+    height: 100%; */
+}
+
+/* Search Form */
+.form {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+
+    /* border: 1px solid black; */
+    padding: 1em;
+
+    margin-bottom: 1.5em;
+}
+
+.form__actions {
+    display: flex;
+    justify-content: center;
+}
+
+.form__btn {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    width: 100%;
+    cursor: pointer;
+}
+
+.form__btn:nth-of-type(2) {
+    margin-left: 0.5em;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field__text-input {
+    padding: 1em;
+}
+
+.form-field__label {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-default);
+}
+
+.form-field__error {
+    margin-top: 0.5rem;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: crimson;
+}
+
+/* Data */
+.pokemon {
+    /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%; */
+
+    color: var(--color-default);
+
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid black;
+    padding: 1em;
+}
+
+.pokemon__label {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.pokemon__moves {
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemon__moves-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 100px;
+    overflow-y: scroll;
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+.pokemon__move {
+    text-transform: capitalize;
+    padding: 0.5em 1em;
+    border: 1px solid black;
+    margin-bottom: 0.5em;
+}
+
+/* todo: list alternaive with grid rows */
