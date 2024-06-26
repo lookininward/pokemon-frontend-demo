@@ -32,33 +32,51 @@ import './style.css';
 
 // todo: focus input on load
 
-const BasicPokemonDemo = () => {
-  const [searchTerm, setSearchTerm] = useState(); // todo: debounce
-  const [pokemon, setPokemon] = useState(null);
-  const [formError, setFormError] = useState(null);
+interface Pokemon {
+  name: string;
+  sprites: {
+    front_default: string;
+  };
+  moves: {
+    move: {
+      name: string;
+      url: string;
+    };
+  }[];
+}
 
-  const getPokemon = async (pokemon) => {
+interface SearchFormError {
+  field: string;
+  msg: string;
+}
+
+const ProductionPokemonDemo = () => {
+  const [searchTerm, setSearchTerm] = useState<string>(""); // todo: debounce
+  const [pokemon, setPokemon] = useState<Pokemon | null>(null);
+  const [formError, setFormError] = useState<SearchFormError | null>(null);
+
+  const getPokemon = async (name: string): Promise<Pokemon | null> => {
     try {
       const url = 'https://pokeapi.co/api/v2/pokemon';
-      const res = await fetch(`${url}/${pokemon}`);
+      const res = await fetch(`${url}/${name}`);
       const data = await res.json();
       const { sprites, moves } = data;
 
       if (!sprites || !moves) return null;
 
       return {
-        name: pokemon,
+        name,
         sprites,
         moves,
-      };
+      }
     } catch (e) {
       return null;
     }
   };
 
-  const onSubmit = async (e) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
-      e.preventDefault(); // todo: why?
+      e.preventDefault();
 
       // clear form errors
       setFormError(null);
@@ -81,10 +99,12 @@ const BasicPokemonDemo = () => {
   };
 
   const onClickClear = () => {
-    setSearchTerm(null);
-    // todo: clear input
+    setSearchTerm("");
     setFormError(null);
     setPokemon(null);
+
+    const input = document.getElementById('search') as HTMLInputElement;
+    if (input) input.value = '';
   };
 
   return (
@@ -163,4 +183,4 @@ const BasicPokemonDemo = () => {
   );
 }
 
-export default BasicPokemonDemo;
+export default ProductionPokemonDemo;
