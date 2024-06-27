@@ -27,7 +27,7 @@ a {
 }
 
 /* Route */
-.pokemon-search-page {
+.page {
     /* Demonstrate layout with flex */
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@ a {
 }
 
 /* Container */
-.pokemon-search-container {
+.container {
     /* Demonstrate layout with grid */
     display: grid;
     place-items: center;
@@ -83,6 +83,13 @@ a {
 .form__field-label {
     margin-bottom: 1rem;
     font-weight: 600;
+    color: var(--color-default);
+}
+
+.form__field-input {
+    padding: 1em;
+    border: 1px solid var(--color-default);
+    border-radius: 0.25em;
     color: var(--color-default);
 }
 

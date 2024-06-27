@@ -39,20 +39,53 @@ button {
 }
 
 .app-container {
-  padding: 2em;
+  padding: 2em 1em;
 }
 
 .app-header {
-  font-size: 2em;
-  margin-bottom: 0.25em;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
   text-transform: capitalize;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .app-header {
+    font-size: 2em;
+    text-align: left;
+    margin-bottom: 0.25em;
+  }
 }
 
 .app-description {
   font-size: 1em;
   margin-bottom: 1em;
   max-width: 650px;
+  text-align: center;
 }
+
+@media (min-width: 768px) {
+  .app-description {
+    text-align: left;
+  }
+}
+
+.app-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  .app-actions {
+    flex-direction: row;
+    margin-bottom: 2em;
+  }
+}
+
 
 .app-select {
   margin-bottom: 1em;
@@ -62,4 +95,38 @@ button {
   width: 100%;
   max-width: 450px;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .app-select {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+}
+
+.app-btn {
+  padding: 0.5em 1em;
+  justify-self: center;
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 768px) {
+  .app-btn {
+    margin-left: 0.5em;
+    margin-bottom: 2em;
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+.app-btn.app-btn--selecteed {
+  background-color: var(--color-default);
+  color: var(--color-white);
+}
+
+.src-container {
+  max-width: calc(100vw - 2em);
+  overflow-x: scroll;
 }

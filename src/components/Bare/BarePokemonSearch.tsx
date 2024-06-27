@@ -1,7 +1,9 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
 /**
  * Focus on the core requirements of the task:
+ * - You have ~10 minutes.
  * - You are given a link to the API documentation: https://pokeapi.co
  * - Display a form with a text input field and a submit button.
  * - User can enter a search term and click the submit button.
@@ -16,6 +18,8 @@
  * - Create a function to handle form submission.
  * - Render the form, input field, and submit button.
  * - Render the Pokémon data when it is available: name, front-facing image, and list of moves.
+ * - All the code is contained in a single file. No need to create separate files for components, styles, etc. No imports.
+ * - No need to worry about styling. Focus on core functinality, use inline styles if needed.
  *
  * Besides demonstrating the core requirements, there is an opportunity to demonstrate additional skills without taking too much additional time.
  * - Semantic HTML

@@ -9,19 +9,26 @@
 :root {
     --color-warning: crimson;
     --color-default: black;
+    --color-gray: gray;
 }
 
 /* Demonstrate targeting DOM element with semantic selectors */
 h1 {
     color: var(--color-default);
     /* Demonstrate use of relative sizing units */
-    font-size: 1.5em; 
+    font-size: 1.5em;
 }
 
 /* Route */
 /* Demonstrate targeting DOM element why classnames */
 .pokemon-search-page {
-    padding: 3em;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .pokemon-search-page {
+        padding: 1em;
+    }
 }
 
 /* Container */
@@ -40,11 +47,14 @@ h1 {
     max-width: 450px;
     display: flex;
     flex-direction: column;
-
-    /* border: 1px solid black; */
     padding: 1em;
+    margin-bottom: .75em;
+}
 
-    margin-bottom: 1.5em;
+@media (min-width: 768px) {
+    .form {
+        margin-bottom: 1.5em;
+    }
 }
 
 .form__actions {
@@ -53,10 +63,36 @@ h1 {
 }
 
 .form__btn {
-    margin-top: 1em;
-    padding: 0.5em 1em;
-    width: 100%;
+    padding: .5em 1em;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form__btn:hover {
+    background-color: #357dbf;
+}
+
+.form__btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+    /* Example of focus state */
+}
+
+.form__btn.form__btn--secondary {
+    border: 1px solid var(--color-default);
+    background-color: white;
+    color: var(--color-default)
+}
+
+.form__btn.form__btn--secondary:hover {
+    background-color: var(--color-default);
+    color: white;
 }
 
 .form__btn:nth-of-type(2) {
@@ -68,8 +104,19 @@ h1 {
     flex-direction: column;
 }
 
+.form-field.form-field--error .form-field__text-input {
+    border-color: var(--color-warning);
+    box-shadow: 0 2px 4px rgba(220, 20, 60, 0.1);
+}
+
 .form-field__text-input {
-    padding: 1em;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-field__label {
@@ -89,26 +136,67 @@ h1 {
 
 /* Data */
 .pokemon {
-    /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%; */
-
     color: var(--color-default);
-
     width: 100%;
-    max-width: 450px;
+    max-width: 375px;
     display: flex;
     flex-direction: column;
-
-    border: 1px solid black;
-    padding: 1em;
+    padding: 2em;
+    padding-bottom: 3em;
 }
 
-.pokemon__label {
+.pokemon__name {
+    font-size: 1.25em;
     font-weight: 600;
     text-transform: capitalize;
+    text-align: left;
+    color: var(--color-default);
+}
+
+@media (min-width: 768px) {
+    .pokemon__name {
+        font-size: 1.5em;
+    }
+}
+
+.pokemon__moves-header {
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: left;
+    color: var(--color-default);
+}
+
+@media (min-width: 768px) {
+    .pokemon__moves-header {
+        font-size: 1.25em;
+    }
+}
+
+.pokemon__img-container {
+    height: 175px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .75em 0 2em 0;
+    background-position: center;
+    background-color: lightgray;
+    border-radius: 12px;
+    border: 1px solid lightgray;
+    background: linear-gradient(to bottom right, #ffcc80, #ffab40);
+}
+
+@media (min-width: 768px) {
+    .pokemon__img-container {
+        height: 200px;
+    }
+}
+
+.pokemon__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .pokemon__moves {
@@ -131,7 +219,26 @@ h1 {
     text-transform: capitalize;
     padding: 0.5em 1em;
     border: 1px solid black;
+    border-radius: 12px;
     margin-bottom: 0.5em;
+    cursor: pointer;
 }
 
-/* todo: list alternaive with grid rows */
+.pokemon__move:hover {
+    background-color: #f0f0f0;
+    transition: 0.3s;
+}
+
+/* Card */
+.card {
+    background-color: #ffffff;
+    overflow: hidden;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px lightgray;
+}
+
+.card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
