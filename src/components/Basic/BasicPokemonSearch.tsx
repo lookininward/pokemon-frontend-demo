@@ -1,62 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-// Demonstrate basic pokemon search using the PokeAPI
-// Functional React component
-// manage local state using useState
-// demonstrate async fetch
-// demonstrate form validation
-// demonstrate error handling
-// demonstrate conditional rendering
-// demonstrate string interpolation
-// demonstrate event handling
-// demonstrate basic css
-// demonstrate basic html
-// demonstrate basic form
-// demonstrate basic input
-// demonstrate basic button
-// demonstrate basic label
-// demonstrate basic div
-// demonstrate basic section
-// demonstrate basic h1
-// demonstrate basic ul
-// demonstrate basic li
-// demonstrate basic a
-// demonstrate basic img
-// demonstrate basic inline styles
-// demonstrate basic css classes
-// demonstrate basic css selectors
-// demonstrate basic css combinators
-// demonstrate semantic html
-// demonstrate debouncing
-// efficient DOM updates
-// efficient DOM design -- no unnecessary elements
-// useCallback?
-
-
-/**
- * Focus on the core requirements of the task:
- * - You have ~30 minutes.
- * - Core requirements outlined in the BarePokemonSearch.tsx.
- *
- * Approach:
- * - Take a moment to review the API documentation. Identify the endpoint that you will use to fetch data for this task.
- * - Create a new React component to contain code. Likely, this will be in an online code editor so just keep it in a single file.
- * - Setup state to manage the search term input value and Pokémon data.
- * - Create a function to fetch data from the PokeAPI.
- * - Create a function to handle form submission.
- * - Render the form, input field, and submit button.
- * - Render the Pokémon data when it is available: name, front-facing image, and list of moves.
- * - All the code is contained in a single file. No need to create separate files for components, styles, etc. No imports.
- *
- * Besides demonstrating the core requirements, there is an opportunity to demonstrate additional skills without taking too much additional time.
- * - Debounce the search term input field.
- * - Form field validation. Display error messages.
- * - Basic responsiven design. Mobile first then desktop.
- * - Basic CSS. Use CSS classes and selectors.
- * - BEM CSS naming convention.
- */
-
 import { useState } from 'react';
 import './style.css';
 
@@ -125,7 +69,6 @@ const BasicPokemonDemo = () => {
   };
 
   return (
-    // todo justify section for route page
     <section className="page">      
       <div className="container">
         <form className="form" onSubmit={onSubmit}>
@@ -173,7 +116,6 @@ const BasicPokemonDemo = () => {
               />
             </div>
 
-            {/* todo: pokemon moves component */}
             <div className="pokemon__moves">
               <div className="pokemon__label">Moves</div>
               {pokemon.moves.length && (

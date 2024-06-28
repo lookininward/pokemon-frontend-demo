@@ -81,7 +81,6 @@ h1 {
 .form__btn:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
-    /* Example of focus state */
 }
 
 .form__btn.form__btn--secondary {
