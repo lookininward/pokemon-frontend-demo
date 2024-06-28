@@ -23,6 +23,13 @@ body {
   min-height: 100vh;
 }
 
+a {
+  color: var(--color-default);
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+
 input[type="text"] {
   background-color: white;
   border: 1px solid var(--color-default);
@@ -40,6 +47,12 @@ button {
 
 .app-container {
   padding: 2em 1em;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 2em 4em;
+  }
 }
 
 .app-header {
@@ -61,7 +74,7 @@ button {
 .app-description {
   font-size: 1em;
   margin-bottom: 1em;
-  max-width: 650px;
+  max-width: 850px;
   text-align: center;
 }
 
@@ -85,7 +98,6 @@ button {
     margin-bottom: 2em;
   }
 }
-
 
 .app-select {
   margin-bottom: 1em;
@@ -121,7 +133,7 @@ button {
   }
 }
 
-.app-btn.app-btn--selecteed {
+.app-btn.app-btn--selected {
   background-color: var(--color-default);
   color: var(--color-white);
 }
@@ -129,4 +141,50 @@ button {
 .src-container {
   max-width: calc(100vw - 2em);
   overflow-x: scroll;
+  font-size: 0.8em;
+}
+
+.src-container__tabs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+  overflow-x: auto;
+}
+
+
+.app-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+@media (min-width: 1024px) {
+  .app-body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1em;
+  }
+}
+
+.app-tabs {
+  display: flex;
+  align-items: center;
+  padding: 1.5em 0;
+}
+
+.detail-container {
+  padding: 0 2em;
+}
+
+/* Utilities */
+.mb-1 {
+  margin-bottom: 0.5em;
+}
+
+.mb-2 {
+  margin-bottom: 1.5em;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
